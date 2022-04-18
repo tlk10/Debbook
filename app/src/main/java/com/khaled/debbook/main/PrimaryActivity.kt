@@ -642,7 +642,7 @@ class PrimaryActivity : AppCompatActivity() {
             RandomInfo(
                 "Doctor Appointment",
                 R.drawable.doctor,
-                "",
+                "Here is the link where you can book an appointment at the GP",
                 "https://udgpoffice.setmore.com/services"
             )
         )
@@ -650,7 +650,7 @@ class PrimaryActivity : AppCompatActivity() {
             RandomInfo(
                 "Flat rental",
                 R.drawable.flat,
-                "",
+                "A facebook group for searching and renting a flat in Debrecen",
                 "https://www.facebook.com/groups/flatforrentdebrecen"
             )
         )
@@ -658,7 +658,7 @@ class PrimaryActivity : AppCompatActivity() {
             RandomInfo(
                 "Events",
                 R.drawable.events,
-                "",
+                "The official Debrecen events website",
                 "https://www.debrecen.hu/en/tourist/programmes/"
             )
         )
