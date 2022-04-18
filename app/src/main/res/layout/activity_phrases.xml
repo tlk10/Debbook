@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/bannerPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:adSize="BANNER"
+        app:adUnitId="@string/bannerPrimaryID"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></com.google.android.gms.ads.AdView>
+
+    <ImageView
+        android:id="@+id/hungarianFlag"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="8dp"
+        android:scaleType="fitXY"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bannerPrimary"
+        tools:srcCompat="@drawable/hungarian" />
+
+    <ImageView
+        android:id="@+id/englishFlag"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="8dp"
+        android:scaleType="fitXY"
+        app:layout_constraintLeft_toLeftOf="@id/hungarianFlag"
+        app:layout_constraintRight_toRightOf="@id/listen"
+        app:layout_constraintTop_toBottomOf="@+id/bannerPrimary"
+        tools:srcCompat="@drawable/english" />
+
+    <ImageView
+        android:id="@+id/listen"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:layout_marginRight="8dp"
+        android:scaleType="fitXY"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bannerPrimary"
+        tools:srcCompat="@drawable/listen" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/phrasesRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/listen" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

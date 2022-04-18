@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Debbook</string>
+    <string name="app_id">ca-app-pub-6742086430201610~5433620198</string>
+    <string name="bannerMainUpID">ca-app-pub-6742086430201610/5884798910</string>
+    <string name="bannerMainDownID">ca-app-pub-6742086430201610/2699645647</string>
+    <string name="bannerPrimaryID">ca-app-pub-6742086430201610/9521039016</string>
+    <string name="bannerSecondaryID">ca-app-pub-6742086430201610/9444129340</string>
+
+</resources>
