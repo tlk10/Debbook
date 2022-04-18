@@ -24,7 +24,7 @@ import kotlinx.android.synthetic.main.activity_single_sport.*
 import kotlinx.android.synthetic.main.activity_single_transport.*
 
 class SecondaryActivity : AppCompatActivity() {
-    lateinit var bannerSecondary: AdView
+    private lateinit var bannerSecondary: AdView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val id = getClickedItem()
@@ -32,11 +32,11 @@ class SecondaryActivity : AppCompatActivity() {
         initialize(id)
     }
 
-    fun getClickedItem(): String {
+    private fun getClickedItem(): String {
         return intent.getStringExtra("ItemClicked") ?: ""
     }
 
-    fun initialize(id: String) {
+    private fun initialize(id: String) {
         when (id) {
             "1" -> initializeDish()
             "2" -> initializeFaculty()
@@ -47,7 +47,7 @@ class SecondaryActivity : AppCompatActivity() {
         }
     }
 
-    fun initializeDish() {
+    private fun initializeDish() {
         val intent = intent
         val food = intent.getParcelableExtra<Food>("FoodClicked") as Food
         setContentView(R.layout.activity_dish)
@@ -65,7 +65,7 @@ class SecondaryActivity : AppCompatActivity() {
         foodImage.setImageBitmap(mBitmapSampled)
 
         supportActionBar?.title = Name.text
-        val placeToEat = findViewById(R.id.whereToEat) as TextView
+        val placeToEat = findViewById<TextView>(R.id.whereToEat)
         placeToEat.setOnClickListener {
             openPlace(food.places)
         }
@@ -77,7 +77,7 @@ class SecondaryActivity : AppCompatActivity() {
 
     }
 
-    fun initializeFaculty() {
+    private fun initializeFaculty() {
         setContentView(R.layout.activity_single_faculty)
         val adRequest = AdRequest.Builder().build()
         bannerSecondary = findViewById(R.id.bannerSecondary)
@@ -91,18 +91,18 @@ class SecondaryActivity : AppCompatActivity() {
         val mBitmapSampled =
             BitmapFactory.decodeResource(this.resources, faculty.image, options)
         singleFacultyImage.setImageBitmap(mBitmapSampled)
-        val facultyLocation = findViewById(R.id.singleFacultyLocation) as TextView
+        val facultyLocation = findViewById<TextView>(R.id.singleFacultyLocation)
         facultyLocation.setOnClickListener {
             openPlace(faculty.location)
         }
-        val facultyWebsite = findViewById(R.id.singleFacultyWebsite) as TextView
+        val facultyWebsite = findViewById<TextView>(R.id.singleFacultyWebsite)
         facultyWebsite.setOnClickListener {
             openPlace(faculty.website)
         }
         supportActionBar?.title = singleFacultyName.text
     }
 
-    fun initializeHoliday() {
+    private fun initializeHoliday() {
         setContentView(R.layout.activity_single_holiday)
         val adRequest = AdRequest.Builder().build()
         bannerSecondary = findViewById(R.id.bannerSecondary)
@@ -122,7 +122,7 @@ class SecondaryActivity : AppCompatActivity() {
         supportActionBar?.title = enName.text
     }
 
-    fun initializeLandMark() {
+    private fun initializeLandMark() {
         setContentView(R.layout.activity_single_land_mark)
         val adRequest = AdRequest.Builder().build()
         bannerSecondary = findViewById(R.id.bannerSecondary)
@@ -136,7 +136,7 @@ class SecondaryActivity : AppCompatActivity() {
         val mBitmapSampled =
             BitmapFactory.decodeResource(this.resources, landmark.image, options)
         placeImage.setImageBitmap(mBitmapSampled)
-        val location = findViewById(R.id.placeLocation) as TextView
+        val location = findViewById<TextView>(R.id.placeLocation)
         location.setOnClickListener {
             openPlace(landmark.location)
         }
@@ -144,7 +144,7 @@ class SecondaryActivity : AppCompatActivity() {
         supportActionBar?.title = placeName.text
     }
 
-    fun initializeSport() {
+    private fun initializeSport() {
         setContentView(R.layout.activity_single_sport)
         val adRequest = AdRequest.Builder().build()
         bannerSecondary = findViewById(R.id.bannerSecondary)
@@ -157,7 +157,7 @@ class SecondaryActivity : AppCompatActivity() {
         singleSportRecyclerView.adapter = SingleSportAdapter(sport.places)
     }
 
-    fun initializeTransport() {
+    private fun initializeTransport() {
         setContentView(R.layout.activity_single_transport)
         val adRequest = AdRequest.Builder().build()
         bannerSecondary = findViewById(R.id.bannerSecondary)
@@ -170,10 +170,8 @@ class SecondaryActivity : AppCompatActivity() {
         singleTransportRecyclerView.adapter = SingleTransportAdapter(transport.companies)
     }
 
-    fun openPlace(link: String) {
-        val webIntent: Intent = Uri.parse(link).let { webpage ->
-            Intent(Intent.ACTION_VIEW, webpage)
-        }
+    private fun openPlace(link: String) {
+        val webIntent: Intent = Intent(Intent.ACTION_VIEW, Uri.parse(link))
         startActivity(webIntent)
     }
 }

@@ -39,7 +39,7 @@ class PrimaryActivity : AppCompatActivity() {
         return item
     }
 
-    fun initialize(id: String?) {
+    private fun initialize(id: String?) {
         when (id) {
             "1" ->initializeFoods()
             "2" ->initializeDocuments()
@@ -1107,90 +1107,90 @@ class PrimaryActivity : AppCompatActivity() {
         foodRecyclerView.layoutManager = GridLayoutManager(this, 2)
         foodRecyclerView.adapter = FoodAdapter(foods)
     }
-    fun initializeDocuments(){
+    private fun initializeDocuments(){
         supportActionBar?.title = "Official Documents"
         setContentView(R.layout.activity_official_documents)
         val adRequest = AdRequest.Builder().build()
         bannerPrimary = findViewById(R.id.bannerPrimary)
         bannerPrimary.loadAd(adRequest)
-        var documents: ArrayList<Document> = ArrayList()
+        val documents: ArrayList<Document> = ArrayList()
         addDocuments(documents)
         documentsRecyclerView.layoutManager = LinearLayoutManager(this)
         documentsRecyclerView.adapter = DocumentsAdapter(documents)
     }
-    fun initializeJobs(){
+    private fun initializeJobs(){
         setContentView(R.layout.activity_jobs)
         supportActionBar?.title = "Jobs"
         val adRequest = AdRequest.Builder().build()
         bannerPrimary = findViewById(R.id.bannerPrimary)
         bannerPrimary.loadAd(adRequest)
-        var jobs: ArrayList<Job> = ArrayList()
+        val jobs: ArrayList<Job> = ArrayList()
         addJobs(jobs)
         jobRecyclerView.layoutManager = LinearLayoutManager(this)
         jobRecyclerView.adapter = JobAdapter(jobs)
     }
-    fun initializeLandMarks(){
+    private fun initializeLandMarks(){
         setContentView(R.layout.activity_land_marks)
         supportActionBar?.title = "Landmarks"
         val adRequest = AdRequest.Builder().build()
         bannerPrimary = findViewById(R.id.bannerPrimary)
         bannerPrimary.loadAd(adRequest)
-        var landmarks: ArrayList<LandMark> = ArrayList()
+        val landmarks: ArrayList<LandMark> = ArrayList()
         addLandMarks(landmarks)
         landMarksRecyclerView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
         landMarksRecyclerView.adapter = LandMarksAdapter(landmarks)
     }
-    fun initializeTransport(){
+    private fun initializeTransport(){
         setContentView(R.layout.activity_transport)
         supportActionBar?.title = "Transport"
         val adRequest = AdRequest.Builder().build()
         bannerPrimary = findViewById(R.id.bannerPrimary)
         bannerPrimary.loadAd(adRequest)
-        var transports: ArrayList<Transport> = ArrayList()
+        val transports: ArrayList<Transport> = ArrayList()
         addTransports(transports)
         transportRecyclerView.layoutManager = LinearLayoutManager(this)
         transportRecyclerView.adapter = TransportAdapter(transports)
     }
-    fun initializeSports(){
+    private fun initializeSports(){
         setContentView(R.layout.activity_sports)
         supportActionBar?.title = "Sports"
         val adRequest = AdRequest.Builder().build()
         bannerPrimary = findViewById(R.id.bannerPrimary)
         bannerPrimary.loadAd(adRequest)
-        var sports: ArrayList<Sport> = ArrayList()
+        val sports: ArrayList<Sport> = ArrayList()
         addSports(sports)
         sportRecyclerView.layoutManager = GridLayoutManager(this, 1)
         sportRecyclerView.adapter = SportsAdapter(sports)
     }
-    fun initializeHolidays(){
+    private fun initializeHolidays(){
         setContentView(R.layout.activity_holidays)
         supportActionBar?.title = "National Holidays"
         val adRequest = AdRequest.Builder().build()
         bannerPrimary = findViewById(R.id.bannerPrimary)
         bannerPrimary.loadAd(adRequest)
-        var holidays: ArrayList<Holiday> = ArrayList()
+        val holidays: ArrayList<Holiday> = ArrayList()
         addHolidays(holidays)
         holidayRecyclerView.layoutManager = GridLayoutManager(this, 1)
         holidayRecyclerView.adapter = HolidayAdapter(holidays)
     }
-    fun initializeUniversity(){
+    private fun initializeUniversity(){
         setContentView(R.layout.activity_university)
         supportActionBar?.title = "Pécs University"
         val adRequest = AdRequest.Builder().build()
         bannerPrimary = findViewById(R.id.bannerPrimary)
         bannerPrimary.loadAd(adRequest)
-        var faculties: ArrayList<Faculty> = ArrayList()
+        val faculties: ArrayList<Faculty> = ArrayList()
         addFaculties(faculties)
         universityRecyclerView.layoutManager = GridLayoutManager(this, 1)
         universityRecyclerView.adapter = UniversityAdapter(faculties)
     }
-    fun initializePhrases(){
+    private fun initializePhrases(){
         setContentView(R.layout.activity_phrases)
         supportActionBar?.title = "Hungarian Phrases"
         val adRequest = AdRequest.Builder().build()
         bannerPrimary = findViewById(R.id.bannerPrimary)
         bannerPrimary.loadAd(adRequest)
-        var phrases: ArrayList<Phrase> = ArrayList()
+        val phrases: ArrayList<Phrase> = ArrayList()
         addPhrases(phrases)
         englishFlag.setImageResource(R.drawable.english)
         hungarianFlag.setImageResource(R.drawable.hungarian)
@@ -1198,18 +1198,18 @@ class PrimaryActivity : AppCompatActivity() {
         phrasesRecyclerView.layoutManager = LinearLayoutManager(this)
         phrasesRecyclerView.adapter = PhrasesAdapter(phrases)
     }
-    fun initializeRandomInfo(){
+    private fun initializeRandomInfo(){
         setContentView(R.layout.activity_random_info)
         supportActionBar?.title = "Random Info"
         val adRequest = AdRequest.Builder().build()
         bannerPrimary = findViewById(R.id.bannerPrimary)
         bannerPrimary.loadAd(adRequest)
-        var infos: ArrayList<RandomInfo> = ArrayList()
+        val infos: ArrayList<RandomInfo> = ArrayList()
         addInfo(infos)
         randomInfoRecyclerView.layoutManager = LinearLayoutManager(this)
         randomInfoRecyclerView.adapter = RandomInfoAdapter(infos)
     }
-    fun initializeAskUs(){
+    private fun initializeAskUs(){
         setContentView(R.layout.activity_ask_us)
         supportActionBar?.title = "Ask Us"
         val adRequest = AdRequest.Builder().build()
