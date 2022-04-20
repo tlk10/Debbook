@@ -1175,7 +1175,7 @@ class PrimaryActivity : AppCompatActivity() {
     }
     private fun initializeUniversity(){
         setContentView(R.layout.activity_university)
-        supportActionBar?.title = "Pécs University"
+        supportActionBar?.title = "Debrecen University"
         val adRequest = AdRequest.Builder().build()
         bannerPrimary = findViewById(R.id.bannerPrimary)
         bannerPrimary.loadAd(adRequest)
